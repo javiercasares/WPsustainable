@@ -2,9 +2,9 @@
 Contributors: javiercasares
 Tags: sustainability, sustainable, green, hosting, site health
 Requires at least: 5.2
-Tested up to: 6.1
-Stable tag: 1.0.1
-Version: 1.0.1
+Tested up to: 6.2
+Stable tag: 1.0.2
+Version: 1.0.2
 License: EUPL 1.2
 License URI: https://www.eupl.eu/1.2/en/
 
@@ -31,6 +31,11 @@ Extract the contents of the ZIP and upload the contents to the `/wp-content/plug
 Data is coming from [The Green Web Foundation](https://www.thegreenwebfoundation.org/) API.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Minor updates
+* Check compatibility.
 
 = 1.0.1 =
 
