@@ -1,0 +1,10 @@
+{
+    "apiVersion": 3,
+    "title": "Green Web Foundation Badge",
+    "name": "wpsustainable/greenbadge",
+    "description": "Shows a badge with the current color status from The Green Web Foundation.",
+    "category": "layout",
+    "icon": "universal-access-alt",
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css"
+}
