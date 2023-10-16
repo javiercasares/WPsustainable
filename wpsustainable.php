@@ -28,3 +28,4 @@ function wpsustainable_plugin_init() {
 
 require_once WPSUSTAINABLE_PLUGIN_PATH . '/includes/helpers-api.php';
 require_once WPSUSTAINABLE_PLUGIN_PATH . '/includes/class-health.php';
+require_once WPSUSTAINABLE_PLUGIN_PATH . '/badge/class-badge.php';

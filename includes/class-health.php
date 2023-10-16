@@ -98,7 +98,7 @@ class wpsustainable_health {
 					'<p>%1$s, %2$s, %3$s</p>',
 					__( 'Your hosting company', 'wpsustainable' ),
 					$wpsustainable['green']['hosting'],
-					__( 'is not using green energy for your site.', 'wpsustainable' )
+					__( 'is not using green energy for your site. <a href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">Why am I seeing this result?</a>', 'wpsustainable' )
 				);
 			}
 		}

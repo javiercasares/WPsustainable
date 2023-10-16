@@ -2,7 +2,7 @@
 Contributors: javiercasares
 Tags: sustainability, sustainable, green, hosting, site health
 Requires at least: 5.2
-Tested up to: 6.2
+Tested up to: 6.3
 Stable tag: 1.0.2
 Version: 1.0.2
 License: EUPL 1.2
