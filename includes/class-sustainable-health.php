@@ -2,9 +2,9 @@
 /**
  * Health Check Class
  *
- * @package    WordPress
+ * @package    WPSustainable
  * @author     Javier Casares <javier@casares.org>
- * @version    1.0.0
+ * @version    1.1.0
  */
 
 defined( 'ABSPATH' ) || die( 'Sorry!' );
@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || die( 'Sorry!' );
 /**
  * Class HealthCheck
  */
-class wpsustainable_health {
+class Sustainable_Health {
 
 	/**
 	 * Construct Class for Health Kit
@@ -31,12 +31,12 @@ class wpsustainable_health {
 
 		$tests['direct']['wpsustainable_greencheck'] = array(
 			'label' => __( 'Hosting Green Check', 'wpsustainable' ),
-			'test'  => array( $this, 'test_wpsustainable_greencheck' ),
+			'test'  => array( $this, 'wpsustainable_test_greencheck' ),
 		);
 
 		$tests['direct']['wpsustainable_co2intensity'] = array(
 			'label' => __( 'Site CO2 intensity', 'wpsustainable' ),
-			'test'  => array( $this, 'test_wpsustainable_co2intensity' ),
+			'test'  => array( $this, 'wpsustainable_test_co2intensity' ),
 		);
 
 		return $tests;
@@ -47,16 +47,16 @@ class wpsustainable_health {
 	 *
 	 * @return array
 	 */
-	public function test_wpsustainable_greencheck() {
+	public function wpsustainable_test_greencheck() {
 
 		$hostname = wpsustainable_get_hostname();
 
 		$result = array(
-			'label' => __( 'There is no sustainability information about your hosting company.', 'wpsustainable' ),
-			'status' => 'recommended',
-			'badge' => array(
+			'label'       => __( 'There is no sustainability information about your hosting company.', 'wpsustainable' ),
+			'status'      => 'recommended',
+			'badge'       => array(
 				'label' => __( 'Sustainability', 'wpsustainable' ),
-				'color' => 'green'
+				'color' => 'green',
 			),
 			'description' => sprintf(
 				'<p>%s</p>',
@@ -70,18 +70,18 @@ class wpsustainable_health {
 
 		if ( is_array( $wpsustainable['green'] ) ) {
 
-			if ( isset( $wpsustainable['green']['is_green'] ) && !is_null( $wpsustainable['green']['is_green'] ) && $wpsustainable['green']['is_green'] ) {
+			if ( isset( $wpsustainable['green']['is_green'] ) && ! is_null( $wpsustainable['green']['is_green'] ) && $wpsustainable['green']['is_green'] ) {
 
 				$documents = '<ul>';
-				foreach( $wpsustainable['green']['docs'] as $wpsustainable_documents ) {
-					if( isset( $wpsustainable_documents['name'] ) && isset( $wpsustainable_documents['url'] ) ) {
+				foreach ( $wpsustainable['green']['docs'] as $wpsustainable_documents ) {
+					if ( isset( $wpsustainable_documents['name'] ) && isset( $wpsustainable_documents['url'] ) ) {
 						$documents .= '<a href="' . $wpsustainable_documents['url'] . '" target="_blank">' . $wpsustainable_documents['name'] . '</a>';
 					}
 				}
 				$documents .= '</ul>';
 
-				$result['status'] = 'good';
-				$result['label'] = __( 'Your Hosting company is using green energy.', 'wpsustainable' );
+				$result['status']      = 'good';
+				$result['label']       = __( 'Your Hosting company is using green energy.', 'wpsustainable' );
 				$result['description'] = sprintf(
 					'<p>%1$s, %2$s, %3$s</p><p>%4$s %5$s</p>',
 					__( 'Your hosting company', 'wpsustainable' ),
@@ -91,9 +91,9 @@ class wpsustainable_health {
 					$documents
 				);
 
-			} elseif ( isset( $wpsustainable['is_green'] ) && !is_null( $wpsustainable['is_green'] ) && !$wpsustainable['is_green'] ) {
-				$result['status'] = 'critical';
-				$result['label'] = __( 'Your Hosting company is not using green energy.', 'wpsustainable' );
+			} elseif ( isset( $wpsustainable['is_green'] ) && ! is_null( $wpsustainable['is_green'] ) && ! $wpsustainable['is_green'] ) {
+				$result['status']      = 'critical';
+				$result['label']       = __( 'Your Hosting company is not using green energy.', 'wpsustainable' );
 				$result['description'] = sprintf(
 					'<p>%1$s, %2$s, %3$s</p>',
 					__( 'Your hosting company', 'wpsustainable' ),
@@ -111,7 +111,7 @@ class wpsustainable_health {
 	 *
 	 * @return array
 	 */
-	public function test_wpsustainable_co2intensity() {
+	public function wpsustainable_test_co2intensity() {
 
 		$hostname = wpsustainable_get_hostname();
 
@@ -134,10 +134,10 @@ class wpsustainable_health {
 
 		if ( is_array( $wpsustainable['co2intensity'] ) ) {
 
-			if ( isset( $wpsustainable['co2intensity']['intensity'] ) && !is_null( $wpsustainable['co2intensity']['intensity'] ) ) {
+			if ( isset( $wpsustainable['co2intensity']['intensity'] ) && ! is_null( $wpsustainable['co2intensity']['intensity'] ) ) {
 
-				$result['status'] = 'good';
-				$result['label'] = sprintf(
+				$result['status']      = 'good';
+				$result['label']       = sprintf(
 					'%1$s %2$s %3$s',
 					__( 'Your average annual grid intensity is', 'wpsustainable' ),
 					$wpsustainable['co2intensity']['intensity'],
@@ -161,7 +161,6 @@ class wpsustainable_health {
 
 		return $result;
 	}
-
 }
 
-new wpsustainable_health();
+new Sustainable_Health();
