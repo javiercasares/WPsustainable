@@ -32,7 +32,7 @@ Data is coming from [The Green Web Foundation](https://www.thegreenwebfoundation
 
 == Security ==
 
-For security or privacy concerns, please contact us at [wordpress @ wpsysadmin . com].
+Found a security vulnerability? Please report it to us privately at the [WPsustainable GitHub repository](https://github.com/javiercasares/WPsustainable/security/advisories/new).
 
 This plugin adheres to the following security measures and review protocols for each version:
 
@@ -47,7 +47,7 @@ This plugin adheres to the following security measures and review protocols for 
 
 == Vulnerabilities ==
 
-* No vulnerabilities have been published up to version 2.2.1.
+* No vulnerabilities have been published up to version 1.1.0.
 
 == Compatibility ==
 
